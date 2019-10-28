@@ -1,15 +1,13 @@
 version: '3'
 
 services:
-  #  HTTP Server Application
-  # fms:
-  #   build:
-  #     context: ./fms/
-  #     dockerfile: fms.dockerfile
-  #   ports:
-  #     - '3000:3000'
-  #   links:
-  #     - rabbitmq
+  # Car Heartbeat Microservice Application
+  ping:
+    build:
+      context: ./fms/
+      dockerfile: ping.dockerfile
+    links:
+      - rabbitmq
 
   # Database Microservice Application
   dbms:
@@ -49,6 +47,7 @@ services:
     ports:
       - "3306:3306"
 
+  # MongoDB Image
   mongo:
     image: mongo
     volumes:
@@ -56,7 +55,7 @@ services:
     ports:
       - "27017:27017"
 
-
+# Database Volumes
 volumes:
   dbdata:
   mongodata:

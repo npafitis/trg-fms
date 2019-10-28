@@ -11,6 +11,7 @@
     "start": "nest start",
     "start:db": "nest start database",
     "start:monitoring": "nest start monitoring",
+    "start:ping": "nest start ping",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
