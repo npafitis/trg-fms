@@ -2,3 +2,5 @@
 /fms/dist
 /fms/.idea/**/*
 /.idea
+/car-sim/.idea
+/car-sim/node_modules
