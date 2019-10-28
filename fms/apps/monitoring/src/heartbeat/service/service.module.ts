@@ -11,12 +11,10 @@ import { ServiceModule as DriverModule } from '../../../../database/src/drivers/
     MongooseModule.forFeature([
       { name: 'Heartbeat', schema: HeartbeatSchema },
     ]),
-    ClientsModule.register([{ name: 'HEARTBEAT_SERVICE', transport: Transport.RMQ }]),
     ClientsModule.register([{ name: 'DRIVER_SERVICE', transport: Transport.RMQ }]),
     DriverModule,
   ],
   exports: [
-    ClientsModule,
     HeartbeatService,
     MongooseModule,
   ],
