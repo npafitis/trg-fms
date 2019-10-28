@@ -8,10 +8,15 @@ import { User } from '../../database/src/users/shared/user.entity';
 import { Driver } from '../../database/src/drivers/shared/driver.entity';
 import { Car } from '../../database/src/cars/shared/car.entity';
 import { Trip } from '../../database/src/trips/shared/trip.entity';
+import { MongooseModule } from '@nestjs/mongoose';
+import { HeartbeatSchema } from '../../monitoring/src/heartbeat/heartbeat.schema';
 
 @Module({
   imports: [
     HeartbeatModule,
+    ClientsModule.register([{ name: 'HEARTBEAT_SERVICE', transport: Transport.RMQ }]),
+    ClientsModule.register([{ name: 'DRIVER_SERVICE', transport: Transport.RMQ }]),
+    MongooseModule.forRoot('mongodb://mongo/nest'),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'mysql',
@@ -22,7 +27,7 @@ import { Trip } from '../../database/src/trips/shared/trip.entity';
       entities: [User, Driver, Car, Trip],
       synchronize: false,
     }),
-    ClientsModule.register([{ name: 'HEARTBEAT_SERVICE', transport: Transport.RMQ }])],
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

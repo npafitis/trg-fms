@@ -45,15 +45,15 @@ export class HeartbeatService implements IApiCrud<HeartbeatDto> {
   }
 
   delete(id: number): Observable<HeartbeatDto> {
-    return fromPromise(this.heartbeatModel.findOne({ _id: id })
+    return fromPromise(this.heartbeatModel.findOne({ id: id })
       .then(item => {
-        this.heartbeatModel.deleteOne({ _id: id });
+        this.heartbeatModel.deleteOne({ id: id });
         return item;
       }));
   }
 
   find(id: number): Observable<HeartbeatDto> {
-    return fromPromise(this.heartbeatModel.findOne({ _id: id }));
+    return fromPromise(this.heartbeatModel.findOne({ id: id }));
   }
 
   get(page: Page): Observable<PagedData<HeartbeatDto>> {
@@ -73,7 +73,7 @@ export class HeartbeatService implements IApiCrud<HeartbeatDto> {
 
   update(payload: { id: number; resource: HeartbeatDto }): Observable<HeartbeatDto> {
     return fromPromise(this.heartbeatModel
-      .update({ _id: payload.id }, payload.resource)
+      .update({ id: payload.id }, payload.resource)
       .then(() => {
         return payload.resource;
       }));

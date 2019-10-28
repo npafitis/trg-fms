@@ -1,9 +1,9 @@
 import { Inject, Injectable } from '@nestjs/common';
-import * as ip from 'ip';
+import { ClientProxy } from '@nestjs/microservices';
 import { HeartbeatDto } from '../../monitoring/src/heartbeat/heartbeat-dto';
 
+import * as ip from 'ip';
 import * as iplocate from 'node-iplocate';
-import { ClientProxy } from '@nestjs/microservices';
 
 const args = process.argv.slice(2);
 
