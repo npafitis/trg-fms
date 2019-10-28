@@ -1,5 +1,6 @@
-export function hello() {
-  return 'Hello World!';
+function heartbeat() {
+
+    heartbeat();
 }
 
-export default hello;
+heartbeat();
