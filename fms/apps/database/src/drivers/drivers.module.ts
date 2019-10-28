@@ -14,7 +14,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   ],
   exports: [TypeOrmModule],
   providers: [DriverService],
-  controllers: [DriverRmqController, DriverController],
+  controllers: [DriverController, DriverRmqController],
 })
 export class DriversModule {
 }

@@ -2,20 +2,22 @@ version: '3'
 
 services:
   #  HTTP Server Application
-  fms:
-    build:
-      context: ./fms/
-      dockerfile: fms.dockerfile
-    ports:
-      - '3000:3000'
-    links:
-      - rabbitmq
+  # fms:
+  #   build:
+  #     context: ./fms/
+  #     dockerfile: fms.dockerfile
+  #   ports:
+  #     - '3000:3000'
+  #   links:
+  #     - rabbitmq
 
   # Database Microservice Application
   dbms:
     build:
       context: ./fms/
       dockerfile: db.dockerfile
+    ports:
+      - "3000:3000"
     links:
       - rabbitmq
 

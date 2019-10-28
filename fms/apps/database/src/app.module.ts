@@ -17,6 +17,8 @@ import { Trip } from './trips/shared/trip.entity';
     AuthModule,
     UsersModule,
     DriversModule,
+    CarsModule,
+    TripsModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'mysql',
@@ -27,8 +29,6 @@ import { Trip } from './trips/shared/trip.entity';
       entities: [User, Driver, Car, Trip],
       synchronize: false,
     }),
-    CarsModule,
-    TripsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

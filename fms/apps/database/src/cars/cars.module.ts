@@ -13,7 +13,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     ClientsModule.register([{ name: 'CAR_SERVICE', transport: Transport.RMQ }])],
   exports: [TypeOrmModule],
   providers: [CarService],
-  controllers: [CarRmqController, CarController],
+  controllers: [CarController, CarRmqController],
 })
 export class CarsModule {
 }

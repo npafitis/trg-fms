@@ -8,15 +8,6 @@
     "tsConfigPath": "apps/fms/tsconfig.app.json"
   },
   "projects": {
-    "fms": {
-      "type": "application",
-      "root": "apps/fms",
-      "entryFile": "main",
-      "sourceRoot": "apps/fms/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/fms/tsconfig.app.json"
-      }
-    },
     "database": {
       "type": "application",
       "root": "apps/database",

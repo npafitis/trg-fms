@@ -8,13 +8,13 @@ import { UserController } from './user.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
-    imports: [
-        TypeOrmModule.forFeature([User, UserRepository]),
-        ClientsModule.register([{ name: 'USER_SERVICE', transport: Transport.RMQ }])
-    ],
-    providers: [UsersService],
-    exports: [TypeOrmModule],
-    controllers: [UserRmqController, UserController]
+  imports: [
+    TypeOrmModule.forFeature([User, UserRepository]),
+    ClientsModule.register([{ name: 'USER_SERVICE', transport: Transport.RMQ }]),
+  ],
+  providers: [UsersService],
+  exports: [TypeOrmModule],
+  controllers: [UserController, UserRmqController],
 })
 export class UsersModule {
 }

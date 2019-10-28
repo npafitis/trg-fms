@@ -13,4 +13,7 @@ export class Driver {
 
   @Column()
   address: string;
+
+  @Column()
+  points: number;
 }

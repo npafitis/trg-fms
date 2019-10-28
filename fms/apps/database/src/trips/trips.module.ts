@@ -14,7 +14,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   ],
   exports: [TypeOrmModule],
   providers: [TripService],
-  controllers: [TripRmqController, TripController],
+  controllers: [TripController, TripRmqController],
 })
 export class TripsModule {
 }
