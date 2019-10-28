@@ -32,7 +32,8 @@
     "trailing-comma": false,
     "eofline": false,
     "no-empty": false,
-    "semicolon": false
+    "semicolon": false,
+    "radix": false
   },
   "rulesDirectory": []
 }
