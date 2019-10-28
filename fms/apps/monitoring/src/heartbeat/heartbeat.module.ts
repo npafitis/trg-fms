@@ -13,8 +13,10 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       { name: 'Heartbeat', schema: HeartbeatSchema },
     ]),
     ClientsModule.register([{ name: 'HEARTBEAT_SERVICE', transport: Transport.RMQ }]),
+    ClientsModule.register([{ name: 'DRIVER_SERVICE', transport: Transport.RMQ }]),
     DriversModule,
   ],
+  exports: [ClientsModule],
   controllers: [HeartbeatRmqController, HeartbeatController],
   providers: [HeartbeatService],
 })
