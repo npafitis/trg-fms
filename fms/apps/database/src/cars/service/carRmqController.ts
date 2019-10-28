@@ -1,11 +1,11 @@
 import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
-import { CarDto } from './shared/car.dto';
+import { CarDto } from '../shared/car.dto';
 import { CarService } from './car.service';
 import { Observable } from 'rxjs';
-import { PagedData } from '../shared/paged-data.class';
-import { Page } from '../shared/page.class';
-import { IApiCrud } from '../shared/api-crud.interface';
+import { PagedData } from '../../shared/paged-data.class';
+import { Page } from '../../shared/page.class';
+import { IApiCrud } from '../../shared/api-crud.interface';
 
 @Controller()
 export class CarRmqController implements IApiCrud<CarDto> {

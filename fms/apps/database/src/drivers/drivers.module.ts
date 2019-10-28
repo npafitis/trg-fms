@@ -1,20 +1,13 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Driver } from './shared/driver.entity';
-import { DriverRepository } from './driver.repository';
-import { DriverService } from './driver.service';
-import { DriverRmqController } from './driverRmqController';
 import { DriverController } from './driver.controller';
-import { ClientsModule, Transport } from '@nestjs/microservices';
+import { ServiceModule } from './service/service.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Driver, DriverRepository]),
-    ClientsModule.register([{ name: 'DRIVER_SERVICE', transport: Transport.RMQ }]),
+    ServiceModule,
   ],
-  exports: [TypeOrmModule],
-  providers: [DriverService],
-  controllers: [DriverController, DriverRmqController],
+  exports: [ServiceModule],
+  controllers: [DriverController],
 })
 export class DriversModule {
 }

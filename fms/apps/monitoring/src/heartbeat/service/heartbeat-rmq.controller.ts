@@ -1,10 +1,10 @@
 import { Controller } from '@nestjs/common';
-import { IApiCrud } from '../../../database/src/shared/api-crud.interface';
+import { IApiCrud } from '../../../../database/src/shared/api-crud.interface';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
-import { Page } from '../../../database/src/shared/page.class';
-import { PagedData } from '../../../database/src/shared/paged-data.class';
-import { HeartbeatDto } from './heartbeat-dto';
+import { Page } from '../../../../database/src/shared/page.class';
+import { PagedData } from '../../../../database/src/shared/paged-data.class';
+import { HeartbeatDto } from '../shared/heartbeat-dto';
 import { HeartbeatService } from './heartbeat.service';
 
 @Controller()

@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { HeartbeatDto } from '../../monitoring/src/heartbeat/heartbeat-dto';
+import { HeartbeatDto } from '../../monitoring/src/heartbeat/shared/heartbeat-dto';
 
 import * as ip from 'ip';
 import * as iplocate from 'node-iplocate';

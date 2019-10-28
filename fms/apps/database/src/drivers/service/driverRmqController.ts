@@ -1,9 +1,9 @@
 import { Controller } from '@nestjs/common';
-import { IApiCrud } from '../shared/api-crud.interface';
-import { DriverDto } from './shared/driver.dto';
+import { IApiCrud } from '../../shared/api-crud.interface';
+import { DriverDto } from '../shared/driver.dto';
 import { Observable } from 'rxjs';
-import { Page } from '../shared/page.class';
-import { PagedData } from '../shared/paged-data.class';
+import { Page } from '../../shared/page.class';
+import { PagedData } from '../../shared/paged-data.class';
 import { DriverService } from './driver.service';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 

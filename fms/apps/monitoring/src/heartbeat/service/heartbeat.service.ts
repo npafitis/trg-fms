@@ -1,15 +1,15 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Heartbeat } from './heartbeat.interface';
+import { Heartbeat } from '../shared/heartbeat.interface';
 import { InjectModel } from '@nestjs/mongoose';
-import { IApiCrud } from '../../../database/src/shared/api-crud.interface';
+import { IApiCrud } from '../../../../database/src/shared/api-crud.interface';
 import { Observable } from 'rxjs';
-import { Page } from '../../../database/src/shared/page.class';
-import { PagedData } from '../../../database/src/shared/paged-data.class';
+import { Page } from '../../../../database/src/shared/page.class';
+import { PagedData } from '../../../../database/src/shared/paged-data.class';
 import { Model } from 'mongoose';
-import { HeartbeatDto } from './heartbeat-dto';
+import { HeartbeatDto } from '../shared/heartbeat-dto';
 import { fromPromise } from 'rxjs/internal-compatibility';
 import { ClientProxy } from '@nestjs/microservices';
-import { Driver } from '../../../database/src/drivers/shared/driver.entity';
+import { Driver } from '../../../../database/src/drivers/shared/driver.entity';
 
 @Injectable()
 export class HeartbeatService implements IApiCrud<HeartbeatDto> {

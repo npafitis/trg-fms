@@ -1,7 +1,7 @@
 import { Seeder } from 'typeorm-seeding';
 import { Connection, ObjectType } from 'typeorm';
 import { EntityFactory } from 'typeorm-seeding/dist/entity-factory';
-import { Driver } from './shared/driver.entity';
+import { Driver } from '../shared/driver.entity';
 
 export class DriverSeeder implements Seeder {
   async run(factory: <Entity, Settings>(entity: ObjectType<Entity>) => (settings?: Settings) => EntityFactory<Entity, Settings>, connection: Connection): Promise<void> {

@@ -1,18 +1,17 @@
 import { Seeder } from 'typeorm-seeding';
 import { Connection, ObjectType } from 'typeorm';
 import { EntityFactory } from 'typeorm-seeding/dist/entity-factory';
-import { Car } from './shared/car.entity';
+import { Trip } from '../shared/trip.entity';
 
-export class CarSeeder implements Seeder {
+export class TripSeeder implements Seeder {
   async run(factory: <Entity, Settings>(entity: ObjectType<Entity>) => (settings?: Settings) => EntityFactory<Entity, Settings>, connection: Connection): Promise<void> {
     await connection
       .createQueryBuilder()
       .insert()
-      .into(Car)
+      .into(Trip)
       .values([
-        { brand: 'Toyota', model: 'Hilux', plateNumber: 'AAA333', vin: 'agc345' },
-        { brand: 'Toyota', model: 'Celica', plateNumber: 'CCC333', vin: 'zz230' },
-        { brand: 'Honda', model: 'Civic', plateNumber: 'BBB333', vin: 'ep3asd' },
+        { driver: { id: 1 }, car: { id: 1 }, date: new Date() },
+        { driver: { id: 2 }, car: { id: 3 }, date: new Date() },
       ])
       .execute();
   }

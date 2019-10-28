@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Inject, Param, Post } from '@nestjs/common';
 import { IApiCrud } from '../../../database/src/shared/api-crud.interface';
-import { HeartbeatDto } from './heartbeat-dto';
+import { HeartbeatDto } from './shared/heartbeat-dto';
 import { Observable } from 'rxjs';
 import { Page } from '../../../database/src/shared/page.class';
 import { PagedData } from '../../../database/src/shared/paged-data.class';

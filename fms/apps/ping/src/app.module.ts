@@ -9,11 +9,11 @@ import { Driver } from '../../database/src/drivers/shared/driver.entity';
 import { Car } from '../../database/src/cars/shared/car.entity';
 import { Trip } from '../../database/src/trips/shared/trip.entity';
 import { MongooseModule } from '@nestjs/mongoose';
-import { HeartbeatSchema } from '../../monitoring/src/heartbeat/heartbeat.schema';
+import { ServiceModule } from '../../monitoring/src/heartbeat/service/service.module';
 
 @Module({
   imports: [
-    HeartbeatModule,
+    ServiceModule,
     ClientsModule.register([{ name: 'HEARTBEAT_SERVICE', transport: Transport.RMQ }]),
     ClientsModule.register([{ name: 'DRIVER_SERVICE', transport: Transport.RMQ }]),
     MongooseModule.forRoot('mongodb://mongo/nest'),

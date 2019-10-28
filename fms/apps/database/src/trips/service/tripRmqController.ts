@@ -1,11 +1,11 @@
 import { Controller } from '@nestjs/common';
-import { IApiCrud } from '../shared/api-crud.interface';
-import { TripDto } from './shared/trip.dto';
+import { IApiCrud } from '../../shared/api-crud.interface';
+import { TripDto } from '../shared/trip.dto';
 import { TripService } from './trip.service';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
-import { Page } from '../shared/page.class';
-import { PagedData } from '../shared/paged-data.class';
+import { Page } from '../../shared/page.class';
+import { PagedData } from '../../shared/paged-data.class';
 
 @Controller()
 export class TripRmqController implements IApiCrud<TripDto> {
