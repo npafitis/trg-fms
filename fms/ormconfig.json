@@ -1,0 +1,13 @@
+{
+  "name": "default",
+  "type": "mysql",
+  "host": "mysql",
+  "port": 3306,
+  "username": "fms",
+  "password": "secret",
+  "database": "fms",
+  "synchronize": false,
+  "seeds": [
+    "**/*.seeder.ts"
+  ]
+}
